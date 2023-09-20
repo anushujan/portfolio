@@ -1,5 +1,7 @@
 import "./FormStyles.css";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import React, { useRef, useState } from "react";
 
@@ -24,6 +26,7 @@ const Form = () => {
       .then(
         (result) => {
           console.log(result.text);
+          toast('Submitted')
         },
         (error) => {
           console.log(error.text);
@@ -39,6 +42,7 @@ const Form = () => {
     setFsubject("");
     setFmessage("");
   };
+
   return (
     <div className="form">
       <form ref={form} onSubmit={sendEmail}>
@@ -81,6 +85,7 @@ const Form = () => {
           required={true}
         />
         <button className="btn">Submit</button>
+        <ToastContainer />
       </form>
     </div>
   );
