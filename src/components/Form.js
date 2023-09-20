@@ -10,7 +10,7 @@ const Form = () => {
   const [fmessage, setFmessage] = useState("");
 
   const form = useRef();
-
+  //send mail
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -29,6 +29,11 @@ const Form = () => {
           console.log(error.text);
         }
       );
+    clearForm();
+  };
+
+  //clear field
+  const clearForm = () => {
     setFname("");
     setFemail("");
     setFsubject("");
