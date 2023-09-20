@@ -26,7 +26,16 @@ const Form = () => {
       .then(
         (result) => {
           console.log(result.text);
-          toast('Submitted')
+          toast.success('successfully submitted', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
         },
         (error) => {
           console.log(error.text);
@@ -85,7 +94,18 @@ const Form = () => {
           required={true}
         />
         <button className="btn">Submit</button>
-        <ToastContainer />
+        <ToastContainer
+        position="bottom-right"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        />
       </form>
     </div>
   );
