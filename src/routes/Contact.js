@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import BackImg2 from '../components/backImg2';
@@ -6,6 +6,9 @@ import Form from '../components/Form';
 
 
 const Contact = () => {
+  useEffect(() => {
+    document.title = "anushujan | Contact";
+  }, []);
   return (
     <div>
       <Navbar/>
